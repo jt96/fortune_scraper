@@ -30,4 +30,12 @@ while len(elems) != 0:
     elems = soup.select('td > a')
 
 # prints random fortune from list
-print(random.choice(fortunes))
+# print(random.choice(fortunes))
+
+# writes all fortunes from list to fortunes.txt
+with open("fortunes.txt", "w", encoding="utf-8") as f:
+    for i in range(0, len(fortunes)):
+        if i == (len(fortunes) - 1):
+            f.write(fortunes[i])
+        else:
+            f.write(fortunes[i] + '\n')
